@@ -1,10 +1,13 @@
 import express from "express";
+import { CreateAdmin, GetAdmin, GetAdminById } from "../controllers/admin.controllers";
 
 const AdminRouter=express.Router()
 
-AdminRouter.get("/",(req,res)=>{
-     res.send("admin")
-})
+
+
+AdminRouter.get("/",GetAdmin)
+AdminRouter.post('/',CreateAdmin)
+AdminRouter.get('/:id',GetAdminById)
 
 
 
